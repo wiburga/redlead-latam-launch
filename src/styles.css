@@ -221,7 +221,7 @@ main { padding-top: 82px; }
 }
 
 @media (max-width: 640px) {
-  @utility site-container { width: min(100% - 28px, 1180px); }
+  .site-container { width: min(100% - 28px, 1180px); }
   .site-header { height: 72px; }.brand-link { height: 62px; }.brand-link img { width: 68px; height: 68px; } main { padding-top: 72px; }.mobile-nav { top: 72px; }
   .home-hero { min-height: 650px; align-items: end; }.home-hero > img { object-position: 66% center; }.hero-shade { background: linear-gradient(0deg, color-mix(in oklab, var(--surface-dark) 96%, transparent) 0%, color-mix(in oklab, var(--surface-dark) 55%, transparent) 62%, color-mix(in oklab, var(--surface-dark) 15%, transparent) 100%); }.hero-content { padding-block: 180px 60px; }.hero-content h1 { font-size: 3.1rem; }.hero-content p { font-size: 1.05rem; }
   .section { padding-block: 70px; }.section-heading { margin-bottom: 34px; }.section-heading h2, .final-cta h2, .objective-inner h2 { font-size: 2rem; }
