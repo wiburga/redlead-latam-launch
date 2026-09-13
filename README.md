@@ -1,65 +1,188 @@
-# REDLEAD: Your Path Forward
+# REDLEAD
 
-Crea un sitio web de 3 pÃ¡ginas (Inicio, Sobre Nosotros, Contacto) para "REDLEAD â€“ Red Latinoamericana de Liderazgo, Empleabilidad, Acceso y Desarrollo", un programa gratuito y 100% virtual de formaciÃ³n y liderazgo para jÃ³venes de 17 a 29 aÃ±os en LatinoamÃ©rica, creado como Community Project del programa internacional KECTIL.
+REDLEAD es una iniciativa que conecta a jóvenes latinoamericanos con herramientas, oportunidades y comunidad para impulsar su crecimiento personal, académico y profesional.
 
-Estilo visual y branding:
+Este proyecto contiene una landing page de tres secciones — Inicio, Sobre Nosotros y Contacto — diseñada para comunicar la misión, los valores y la propuesta del programa REDLEAD, además de facilitar la inscripción mediante un formulario placeholder.
 
-Paleta de colores: rojo (
-#D62828 aprox.), verde azulado/teal (
-#1B7F79 aprox.), naranja/dorado (
-#F4A11B aprox.), y fondo blanco/crema
-Logo conceptual: una figura de tres personas abstractas en rojo, verde y naranja rodeando un mapa de LatinoamÃ©rica hecho con puntos conectados en rojo (estilo red/network), con el texto "REDLEAD" en negrita (LEAD con una estrella dentro de la A) y el slogan "LÃ­deres que potencian LÃ­deres"
-DiseÃ±o moderno, limpio, dirigido a jÃ³venes universitarios; tipografÃ­a sans-serif bold para tÃ­tulos
-Uso de iconos circulares de colores (rojo, verde, naranja) para listas de beneficios
-Fotos de jÃ³venes latinoamericanos sonriendo, trabajando en laptop, en videollamada
+## ?? Visión general
 
-PÃ¡gina de Inicio debe incluir, en este orden:
+REDLEAD — Red Latinoamericana de Liderazgo, Empleabilidad, Acceso y Desarrollo — es un programa gratuito y 100% virtual orientado a jóvenes de 17 a 29 años en Latinoamérica. Nació como Community Project del programa internacional KECTIL 2026 y busca fortalecer competencias en liderazgo, empleabilidad, marca personal, inteligencia artificial, análisis de datos y acceso a oportunidades internacionales.
 
-Hero section: tÃ­tulo "Â¿Listo para tu prÃ³ximo gran paso?" + subtÃ­tulo "PrepÃ¡rate para el empleo que quieres o la beca que puede cambiar tu futuro" + botÃ³n CTA "Ãšnete a REDLEAD" (enlaza a un ancla de la pÃ¡gina de Contacto, usa # como placeholder) + imagen de dos jÃ³venes con mochila mirando hacia adelante
-SecciÃ³n "La universidad te da conocimientos, REDLEAD te da las herramientas para destacar en el mundo real" con 5 iconos: Desarrolla tu liderazgo / Mejora tu empleabilidad / PrepÃ¡rate para becas internacionales / Conecta con ponentes especializados / Potencia tus habilidades con IA
-SecciÃ³n "Â¿QuÃ© lograrÃ¡s con REDLEAD?" con 5 puntos con iconos: DefinirÃ¡s tu propÃ³sito y tu camino profesional / CrearÃ¡s un CV y LinkedIn que realmente destaquen / AprenderÃ¡s a brillar en entrevistas y procesos de selecciÃ³n / ElaborarÃ¡s cartas de motivaciÃ³n que abran puertas / FormarÃ¡s parte de una comunidad latinoamericana que te inspira
-SecciÃ³n "Lo mejor" con 3 tarjetas: 100% virtual (desde donde estÃ©s) / Para jÃ³venes de LatinoamÃ©rica (sin importar tu paÃ­s) / Completamente gratuito (sin costo de inscripciÃ³n ni participaciÃ³n)
-SecciÃ³n "REDLEAD es mÃ¡s que un programa, es una experiencia que te impulsa a" con 3 puntos alrededor de un Ã­cono central: Crecer como lÃ­der / Ampliar tus oportunidades / Generar impacto en tu comunidad
-SecciÃ³n final CTA: "No esperes a que las oportunidades lleguen, prepÃ¡rate para conquistarlas" + botÃ³n "Ãšnete a REDLEAD" + iconos de redes sociales (Instagram @redlead.latam, Facebook Redlead, TikTok @redlead.latam, YouTube @redlead_latam) con placeholders de enlace
+## ?? Objetivo del proyecto
 
-PÃ¡gina "Sobre Nosotros" debe incluir:
+Crear una experiencia web moderna, clara y visualmente atractiva que:
 
-ExplicaciÃ³n de quÃ© es REDLEAD (Red Latinoamericana de Liderazgo, Empleabilidad, Acceso y Desarrollo)
-Que naciÃ³ como Community Project del programa KECTIL 2026
-MisiÃ³n: fortalecer competencias en liderazgo, empleabilidad, inteligencia artificial, anÃ¡lisis de datos, marca personal y desarrollo profesional
-Objetivo: preparar a los participantes para acceder a oportunidades de empleo y becas internacionales
-SecciÃ³n de valores/pilares (usar los mismos 3 del Ã­cono circular: liderazgo, oportunidades, impacto comunitario)
+- presente la misión y el impacto del programa,
+- comunique los beneficios para jóvenes latinoamericanos,
+- muestre los pilares de REDLEAD,
+- invite a la inscripción mediante una llamada a la acción clara,
+- sirva como base para futuras ampliaciones del proyecto.
 
-PÃ¡gina de Contacto debe incluir:
+## ? Branding y estilo visual
 
-Formulario simple (nombre, correo, paÃ­s, mensaje) â€” placeholder, sin conexiÃ³n real a backend
-Texto: "Completa este formulario para formalizar tu inscripciÃ³n. La informaciÃ³n proporcionada serÃ¡ tratada con confidencialidad y utilizada Ãºnicamente para fines de organizaciÃ³n, comunicaciÃ³n y evaluaciÃ³n del programa."
-Iconos de redes sociales con los mismos handles de arriba
-Espacio para insertar mÃ¡s adelante el link real del formulario de inscripciÃ³n (dejar como placeholder #inscripcion)
+La identidad visual del sitio está inspirada en una estética moderna y juvenil, con una paleta basada en:
 
-NavegaciÃ³n: menÃº superior fijo con logo a la izquierda y enlaces a Inicio / Sobre Nosotros / Contacto, mÃ¡s un botÃ³n destacado "Ãšnete" a la derecha.
+- rojo: #D62828
+- verde azulado: #1B7F79
+- naranja/dorado: #F4A11B
+- fondo blanco/crema
 
-Footer: logo pequeÃ±o, slogan "LÃ­deres que potencian LÃ­deres", iconos de redes sociales, y texto "Â© 2026 REDLEAD", ademas te adjunto el logo que deberas usar
+Además, se propone:
+
+- un logo conceptual con tres figuras abstractas que representan personas y una red latinoamericana,
+- tipografía sans-serif bold para títulos,
+- iconos circulares en colores primarios para destacar beneficios y valores,
+- diseño limpio y adecuado para un público universitario y joven,
+- uso de fotografías de jóvenes latinoamericanos en contextos de estudio, trabajo y colaboración.
+
+## ?? Secciones del sitio
+
+### Inicio
+
+La página principal incluye:
+
+- hero con el título “¿Listo para tu próximo gran paso?”
+- subtítulo: “Prepárate para el empleo que quieres o la beca que puede cambiar tu futuro”
+- CTA principal: “Únete a REDLEAD”
+- sección de beneficios con 5 iconos clave
+- sección “¿Qué lograrás con REDLEAD?” con 5 objetivos concretos
+- bloque de ventajas con 3 tarjetas destacadas
+- sección de impacto centrada en liderazgo, oportunidades y comunidad
+- CTA final con redes sociales y enlaces placeholders
+
+### Sobre Nosotros
+
+Incluye:
+
+- descripción de REDLEAD,
+- origen como Community Project de KECTIL 2026,
+- misión del programa,
+- objetivo de preparación para oportunidades de empleo y becas internacionales,
+- pilares/valores: liderazgo, oportunidades e impacto comunitario.
+
+### Contacto
+
+Incluye:
+
+- formulario simple con nombre, correo, país y mensaje,
+- texto informativo sobre tratamiento de datos,
+- redes sociales con handles oficiales,
+- espacio para conectar el formulario real de inscripción más adelante.
+
+## ?? Navegación y experiencia
+
+La navegación contempla:
+
+- menú fijo superior con logo a la izquierda,
+- enlaces a Inicio, Sobre Nosotros y Contacto,
+- botón destacado “Únete” a la derecha,
+- footer con logo, slogan, redes sociales y texto “© 2026 REDLEAD”.
+
+## ??? Stack tecnológico
+
+Este proyecto fue desarrollado con:
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- TanStack Router
+- shadcn/ui
+
+## ?? Inicio rápido
+
+### Requisitos
+
+- Node.js 18 o superior
+- npm
+
+### Instalación
+
+```bash
+git clone <url-del-repositorio>
+cd redlead-latam-launch
+npm install
+```
+
+### Ejecutar en desarrollo
+
+```bash
+npm run dev
+```
+
+La aplicación quedará disponible en el puerto local de Vite, normalmente en:
+
+```text
+http://localhost:5173
+```
+
+### Compilar para producción
+
+```bash
+npm run build
+```
+
+### Vista previa de producción
+
+```bash
+npm run preview
+```
+
+## ?? Estructura del proyecto
+
+```text
+redlead-latam-launch/
++-- public/
++-- src/
+¦   +-- assets/
+¦   +-- components/
+¦   +-- hooks/
+¦   +-- lib/
+¦   +-- routes/
+¦   +-- router.tsx
+¦   +-- server.ts
+¦   +-- start.ts
+¦   +-- styles.css
++-- AGENTS.md
++-- components.json
++-- eslint.config.js
++-- package.json
++-- README.md
++-- tsconfig.json
++-- vite.config.ts
++-- bunfig.toml
+```
+
+## ?? Enlaces y referencias
+
+- Proyecto en Lovable: https://lovable.dev
+- App en vivo: https://redlead-latam-launch.lovable.app
+- Editor del proyecto: https://lovable.dev/projects/1e0b5469-216f-4279-a90bb4935448
+
+## ?? Notas
+
+- Los enlaces de redes sociales y la inscripción están preparados como placeholders para conectarse más adelante.
+- El contenido está pensado para ser escalable y adaptable a futuras iteraciones del programa.
+- El proyecto se mantiene en una base moderna y reutilizable para continuar desarrollando la marca REDLEAD.
+
+---
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://redlead-latam-launch.lovable.app
+## ?? Scripts disponibles
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1e0b5469-216f-4279-9c86-a90bb4935448).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm â€” [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
 npm run dev
+npm run build
+npm run preview
+npm run lint
+npm run format
 ```
+
+## ?? Desarrollo con Lovable
+
+Si quieres seguir desarrollando este proyecto en Lovable:
+
+- describe la funcionalidad que deseas construir,
+- sincroniza cambios con el repositorio,
+- continúa trabajando de forma iterativa con la app ya conectada.

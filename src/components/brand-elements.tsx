@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 
 export function SectionHeading({ eyebrow, children, lead }: { eyebrow?: string; children: React.ReactNode; lead?: string }) {
@@ -16,4 +17,29 @@ export function IconBadge({ icon: Icon, tone = "teal" }: { icon: LucideIcon; ton
       <Icon aria-hidden="true" />
     </span>
   );
+}
+
+export function Reveal({ children, className = "" }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12 },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  return <div ref={ref} className={`reveal ${isVisible ? "is-visible" : ""} ${className}`.trim()}>{children}</div>;
 }
