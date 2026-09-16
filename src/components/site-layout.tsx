@@ -52,7 +52,13 @@ function Header() {
     <header className="site-header">
       <div className="site-container header-inner">
         <Link to="/" className="brand-link" aria-label="REDLEAD — Inicio" onClick={close}>
-          <img src={logoAsset.url} alt="REDLEAD" width={768} height={768} />
+          <img
+            src={logoAsset.url}
+            alt="REDLEAD"
+            width={768}
+            height={768}
+            className="h-10 w-auto object-contain md:h-12"
+          />
         </Link>
         <nav className="desktop-nav" aria-label="Navegación principal">
           <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "active" }}>Inicio</Link>
