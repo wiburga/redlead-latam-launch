@@ -11,7 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as HistoriasRouteImport } from './routes/historias'
+import { Route as OportunidadesRouteImport } from './routes/oportunidades'
 import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
+import { Route as ProgramasIndexRouteImport } from './routes/programas.index'
+import { Route as ProgramasSlugRouteImport } from './routes/programas.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +27,98 @@ const ContactoRoute = ContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HistoriasRoute = HistoriasRouteImport.update({
+  id: '/historias',
+  path: '/historias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OportunidadesRoute = OportunidadesRouteImport.update({
+  id: '/oportunidades',
+  path: '/oportunidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
   id: '/sobre-nosotros',
   path: '/sobre-nosotros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramasIndexRoute = ProgramasIndexRouteImport.update({
+  id: '/programas/',
+  path: '/programas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramasSlugRoute = ProgramasSlugRouteImport.update({
+  id: '/programas/$slug',
+  path: '/programas/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
+  '/historias': typeof HistoriasRoute
+  '/oportunidades': typeof OportunidadesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/programas/$slug': typeof ProgramasSlugRoute
+  '/programas/': typeof ProgramasIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
+  '/historias': typeof HistoriasRoute
+  '/oportunidades': typeof OportunidadesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/programas/$slug': typeof ProgramasSlugRoute
+  '/programas': typeof ProgramasIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contacto': typeof ContactoRoute
+  '/historias': typeof HistoriasRoute
+  '/oportunidades': typeof OportunidadesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/programas/$slug': typeof ProgramasSlugRoute
+  '/programas/': typeof ProgramasIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contacto' | '/sobre-nosotros'
+  fullPaths:
+    | '/'
+    | '/contacto'
+    | '/historias'
+    | '/oportunidades'
+    | '/sobre-nosotros'
+    | '/programas/$slug'
+    | '/programas/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contacto' | '/sobre-nosotros'
-  id: '__root__' | '/' | '/contacto' | '/sobre-nosotros'
+  to:
+    | '/'
+    | '/contacto'
+    | '/historias'
+    | '/oportunidades'
+    | '/sobre-nosotros'
+    | '/programas/$slug'
+    | '/programas'
+  id:
+    | '__root__'
+    | '/'
+    | '/contacto'
+    | '/historias'
+    | '/oportunidades'
+    | '/sobre-nosotros'
+    | '/programas/$slug'
+    | '/programas/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactoRoute: typeof ContactoRoute
+  HistoriasRoute: typeof HistoriasRoute
+  OportunidadesRoute: typeof OportunidadesRoute
   SobreNosotrosRoute: typeof SobreNosotrosRoute
+  ProgramasSlugRoute: typeof ProgramasSlugRoute
+  ProgramasIndexRoute: typeof ProgramasIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,11 +137,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/historias': {
+      id: '/historias'
+      path: '/historias'
+      fullPath: '/historias'
+      preLoaderRoute: typeof HistoriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oportunidades': {
+      id: '/oportunidades'
+      path: '/oportunidades'
+      fullPath: '/oportunidades'
+      preLoaderRoute: typeof OportunidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre-nosotros': {
       id: '/sobre-nosotros'
       path: '/sobre-nosotros'
       fullPath: '/sobre-nosotros'
       preLoaderRoute: typeof SobreNosotrosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programas/': {
+      id: '/programas/'
+      path: '/programas'
+      fullPath: '/programas/'
+      preLoaderRoute: typeof ProgramasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programas/$slug': {
+      id: '/programas/$slug'
+      path: '/programas/$slug'
+      fullPath: '/programas/$slug'
+      preLoaderRoute: typeof ProgramasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,7 +178,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactoRoute: ContactoRoute,
+  HistoriasRoute: HistoriasRoute,
+  OportunidadesRoute: OportunidadesRoute,
   SobreNosotrosRoute: SobreNosotrosRoute,
+  ProgramasSlugRoute: ProgramasSlugRoute,
+  ProgramasIndexRoute: ProgramasIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
