@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, BrainCircuit, BriefcaseBusiness, ChartNoAxesCombined, Eye, Flag, HeartHandshake, Lightbulb, Sparkles, Target } from "lucide-react";
+import { ArrowRight, BrainCircuit, BriefcaseBusiness, ChartNoAxesCombined, HeartHandshake, Lightbulb, Sparkles, Target, Users } from "lucide-react";
 
-import { IconBadge, Reveal, SectionHeading } from "@/components/brand-elements";
+import { IconBadge, SectionHeading } from "@/components/brand-elements";
 import { Button } from "@/components/ui/button";
 import communityImage from "@/assets/redlead-community.jpg";
 
@@ -69,30 +69,6 @@ function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section mission-vision-section">
-        <div className="site-container mission-vision-grid">
-          <Reveal>
-            <article className="mission-vision-card mission-card">
-              <div className="mission-vision-header">
-                <IconBadge icon={Flag} tone="red" />
-                <h3>Misión</h3>
-              </div>
-              <p>Fortalecer las competencias de liderazgo, empleabilidad y desarrollo profesional de jóvenes latinoamericanos de 17 a 29 años, brindándoles herramientas prácticas, mentoría y una comunidad regional que impulse su acceso a oportunidades de empleo y becas internacionales.</p>
-            </article>
-          </Reveal>
-
-          <Reveal>
-            <article className="mission-vision-card vision-card">
-              <div className="mission-vision-header">
-                <IconBadge icon={Eye} tone="teal" />
-                <h3>Visión</h3>
-              </div>
-              <p>Ser la red juvenil de referencia en Latinoamérica para el desarrollo de liderazgo y empleabilidad, reconocida por transformar el potencial de miles de jóvenes en impacto real dentro de sus comunidades y países.</p>
-            </article>
-          </Reveal>
         </div>
       </section>
 
