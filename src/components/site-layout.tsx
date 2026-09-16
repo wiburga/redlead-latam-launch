@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import {
+  ChevronDown,
   Facebook,
   Instagram,
   Menu,
@@ -10,7 +11,18 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/redlead-logo.webp.asset.json";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import logoAsset from "@/assets/LogoREDLEAD.png";
 
 const socialLinks = [
   { label: "Instagram @redlead.latam", handle: "@redlead.latam", icon: Instagram },
@@ -46,14 +58,22 @@ export function SocialLinks({ showHandles = false }: { showHandles?: boolean }) 
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const close = () => setOpen(false);
+
+  const aboutLinks = [
+    { label: "Misión y Visión", to: "/nosotros/mision-vision" },
+    { label: "Nuestro Impacto", to: "/nosotros/impacto" },
+    { label: "Nuestro Equipo", to: "/", hash: "nuestro-equipo" },
+    { label: "Proyectos", to: "/nosotros/proyectos" },
+  ] as const;
 
   return (
     <header className="site-header">
       <div className="site-container header-inner">
         <Link to="/" className="brand-link" aria-label="REDLEAD — Inicio" onClick={close}>
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="REDLEAD"
             width={768}
             height={768}
@@ -61,13 +81,25 @@ function Header() {
           />
         </Link>
         <nav className="desktop-nav" aria-label="Navegación principal">
-          <Link to="/" activeOptions={{ exact: true }} activeProps={{ className: "active" }}>Inicio</Link>
-          <Link to="/sobre-nosotros" activeProps={{ className: "active" }}>Sobre Nosotros</Link>
-          <Link to="/contacto" activeProps={{ className: "active" }}>Contacto</Link>
+          <Link to="/oportunidades" activeProps={{ className: "active" }}>Oportunidades</Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button type="button" className="nav-dropdown-trigger" aria-label="Abrir menú Nosotros">
+                Nosotros <ChevronDown aria-hidden="true" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="center" className="nav-dropdown-content">
+              {aboutLinks.map((item) => (
+                <DropdownMenuItem key={item.label} asChild>
+                  <Link to={item.to} hash={"hash" in item ? item.hash : undefined}>{item.label}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link to="/programas">Recursos</Link>
+          <Link to="/oportunidades">Convocatorias REDLEAD</Link>
+          <Link to="/contacto" activeProps={{ className: "active" }}>Contáctanos</Link>
         </nav>
-        <Button asChild variant="hero" className="desktop-join">
-          <Link to="/contacto" hash="inscripcion">Únete</Link>
-        </Button>
         <Button
           type="button"
           variant="ghost"
@@ -82,9 +114,20 @@ function Header() {
       </div>
       {open && (
         <nav className="mobile-nav" aria-label="Navegación móvil">
-          <Link to="/" onClick={close}>Inicio</Link>
-          <Link to="/sobre-nosotros" onClick={close}>Sobre Nosotros</Link>
-          <Link to="/contacto" onClick={close}>Contacto</Link>
+          <Link to="/oportunidades" onClick={close}>Oportunidades</Link>
+          <Collapsible open={mobileAboutOpen} onOpenChange={setMobileAboutOpen} className="mobile-about">
+            <CollapsibleTrigger className="mobile-about-trigger">
+              <span>Nosotros</span><ChevronDown aria-hidden="true" />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mobile-about-content">
+              {aboutLinks.map((item) => (
+                <Link key={item.label} to={item.to} hash={"hash" in item ? item.hash : undefined} onClick={close}>{item.label}</Link>
+              ))}
+            </CollapsibleContent>
+          </Collapsible>
+          <Link to="/programas" onClick={close}>Recursos</Link>
+          <Link to="/oportunidades" onClick={close}>Convocatorias REDLEAD</Link>
+          <Link to="/contacto" onClick={close}>Contáctanos</Link>
           <Button asChild variant="hero" className="w-full">
             <Link to="/contacto" hash="inscripcion" onClick={close}>Únete a REDLEAD</Link>
           </Button>
@@ -99,7 +142,7 @@ function Footer() {
     <footer className="site-footer">
       <div className="site-container footer-inner">
         <div className="footer-brand">
-          <img src={logoAsset.url} alt="REDLEAD" width={768} height={768} loading="lazy" />
+          <img src={logoAsset} alt="REDLEAD" width={768} height={768} loading="lazy" />
           <div>
             <strong>REDLEAD</strong>
             <p>Líderes que potencian Líderes</p>

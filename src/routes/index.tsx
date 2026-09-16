@@ -1,27 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Bot,
+  ArrowRight,
   BriefcaseBusiness,
-  Check,
-  Compass,
+  CheckCircle2,
   Globe2,
   GraduationCap,
   HeartHandshake,
-  Laptop,
-  Lightbulb,
-  MessageCircleMore,
+  MessageCircle,
   Rocket,
-  Sparkles,
-  Target,
-  UserRoundSearch,
   Users,
 } from "lucide-react";
 
 import { IconBadge, SectionHeading } from "@/components/brand-elements";
-import { SocialLinks } from "@/components/site-layout";
+import { TeamMemberCard } from "@/components/team-member-card";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/redlead-hero.jpg";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import communityImage from "@/assets/redlead-community.jpg";
+import { teamAreas } from "@/lib/team";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,116 +32,190 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const tools = [
-  [Lightbulb, "Desarrolla tu liderazgo", "red"],
-  [BriefcaseBusiness, "Mejora tu empleabilidad", "teal"],
-  [GraduationCap, "Prepárate para becas internacionales", "gold"],
-  [MessageCircleMore, "Conecta con ponentes especializados", "red"],
-  [Bot, "Potencia tus habilidades con IA", "teal"],
+const pillars = [
+  [GraduationCap, "Becas", "Encuentra convocatorias y recursos para dar el siguiente paso en tu formación.", "red"],
+  [MessageCircle, "Mentorías", "Aprende de personas que ya recorrieron caminos parecidos al tuyo.", "teal"],
+  [BriefcaseBusiness, "Oportunidades", "Prepárate para acceder a programas, empleos y experiencias que impulsan tu perfil.", "gold"],
+  [HeartHandshake, "Comunidad", "Conecta con jóvenes de Latinoamérica que comparten tus ganas de crecer e impactar.", "red"],
 ] as const;
 
-const achievements = [
-  [Compass, "Definirás tu propósito y tu camino profesional"],
-  [UserRoundSearch, "Crearás un CV y LinkedIn que realmente destaquen"],
-  [Sparkles, "Aprenderás a brillar en entrevistas y procesos de selección"],
-  [Rocket, "Elaborarás cartas de motivación que abran puertas"],
-  [Users, "Formarás parte de una comunidad latinoamericana que te inspira"],
+const stats = [
+  ["+1,000", "jóvenes acompañados"],
+  ["15", "países conectados"],
+  ["100%", "virtual y accesible"],
+  ["4", "rutas para avanzar"],
+] as const;
+
+const testimonials = [
+  ["“REDLEAD me ayudó a ordenar mis metas y a sentir que una oportunidad internacional también podía ser para mí.”", "Valentina M.", "Participante, Colombia"],
+  ["“Encontré herramientas concretas para mejorar mi perfil y una comunidad que me motivó a seguir intentando.”", "Diego R.", "Participante, Perú"],
+  ["“La mentoría convirtió mis dudas en un plan de acción que puedo aplicar desde hoy.”", "Camila S.", "Participante, Ecuador"],
 ] as const;
 
 function Index() {
   return (
     <>
-      <section className="home-hero">
-        <img src={heroImage} alt="Dos jóvenes latinoamericanos con mochilas mirando hacia su futuro" width={1536} height={1024} fetchPriority="high" />
-        <div className="hero-shade" />
-        <div className="site-container hero-content">
-          <span className="hero-kicker">Tu futuro empieza hoy</span>
-          <h1>¿Listo para tu próximo gran paso?</h1>
-          <p>Prepárate para el empleo que quieres o la beca que puede cambiar tu futuro.</p>
-          <Button asChild variant="warm" size="lg">
-            <Link to="/contacto" hash="inscripcion">Únete a REDLEAD <Rocket aria-hidden="true" /></Link>
-          </Button>
-        </div>
-      </section>
-
-      <section className="section tools-section">
-        <div className="site-container">
-          <SectionHeading eyebrow="Herramientas para avanzar">
-            La universidad te da conocimientos, <span className="text-primary">REDLEAD</span> te da las herramientas para destacar en el mundo real
-          </SectionHeading>
-          <div className="tools-grid">
-            {tools.map(([Icon, label, tone]) => (
-              <article className="tool-item" key={label}>
-                <IconBadge icon={Icon} tone={tone} />
-                <h3>{label}</h3>
-              </article>
-            ))}
+      <section className="home-hero home-hero-redesign">
+        <div className="hero-shape hero-shape-one" aria-hidden="true" />
+        <div className="hero-shape hero-shape-two" aria-hidden="true" />
+        <div className="site-container hero-content hero-layout">
+          <div className="hero-copy">
+            <span className="hero-kicker">REDLEAD · Comunidad latinoamericana</span>
+            <h1>Conectamos a jóvenes latinoamericanos con <span>oportunidades que transforman su futuro</span></h1>
+            <p>Becas, mentorías y recursos para que dar el siguiente paso en tu formación y carrera sea más fácil.</p>
+            <div className="hero-actions">
+              <Button asChild variant="hero" size="lg">
+                <Link to="/oportunidades">Explora oportunidades <ArrowRight aria-hidden="true" /></Link>
+              </Button>
+            </div>
+            <div className="hero-trust" aria-label="REDLEAD en Latinoamérica">
+              <Globe2 aria-hidden="true" />
+              <span>Una comunidad para avanzar, estés donde estés.</span>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section achievement-section">
-        <div className="site-container split-layout">
-          <div className="image-frame community-image">
-            <img src={communityImage} alt="Jóvenes latinoamericanos colaborando con laptops y en videollamada" width={1280} height={960} loading="lazy" />
-            <span className="image-note"><Globe2 /> 100% Latinoamérica</span>
-          </div>
-          <div>
-            <SectionHeading eyebrow="Resultados reales">¿Qué lograrás con REDLEAD?</SectionHeading>
-            <div className="achievement-list">
-              {achievements.map(([Icon, label], index) => (
-                <div className="achievement-row" key={label}>
-                  <span className={`number-dot number-dot-${(index % 3) + 1}`}>{index + 1}</span>
-                  <Icon aria-hidden="true" />
-                  <p>{label}</p>
-                </div>
-              ))}
+          <div className="hero-placeholder" role="img" aria-label="Espacio reservado para una imagen de jóvenes latinoamericanos">
+            <div className="hero-placeholder-inner">
+              <Users aria-hidden="true" />
+              <span>Imagen de nuestra comunidad</span>
+              <small>Próximamente</small>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section best-section">
+      <section className="section about-redlead-section" id="que-es-redlead">
+        <div className="site-container about-redlead-grid">
+          <div className="about-redlead-copy">
+            <SectionHeading eyebrow="¿Qué es REDLEAD?" lead="Un punto de encuentro para que más jóvenes latinoamericanos puedan descubrir, preparar y aprovechar nuevas posibilidades.">
+              Tu siguiente oportunidad puede empezar con una conexión
+            </SectionHeading>
+            <p>Somos una comunidad que acerca información, acompañamiento y herramientas prácticas a jóvenes que quieren crecer profesionalmente, estudiar, liderar proyectos o generar impacto en su entorno.</p>
+            <Button asChild variant="hero">
+              <Link to="/sobre-nosotros">Conoce nuestra misión <ArrowRight aria-hidden="true" /></Link>
+            </Button>
+          </div>
+          <div className="about-redlead-image image-frame">
+            <img src={communityImage} alt="Jóvenes latinoamericanos colaborando en una comunidad virtual" width={1280} height={960} loading="lazy" />
+            <div className="image-note"><Users aria-hidden="true" /> Crecemos en comunidad</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pillars-section" id="oportunidades">
         <div className="site-container">
-          <SectionHeading eyebrow="Sin barreras">Lo mejor de REDLEAD</SectionHeading>
-          <div className="best-grid">
-            {[
-              [Laptop, "100% virtual", "Desde donde estés", "teal"],
-              [Globe2, "Para jóvenes de Latinoamérica", "Sin importar tu país", "red"],
-              [HeartHandshake, "Completamente gratuito", "Sin costo de inscripción ni participación", "gold"],
-            ].map(([Icon, title, text, tone]) => (
-              <article className={`best-card best-card-${tone}`} key={title as string}>
-                <IconBadge icon={Icon as typeof Laptop} tone={tone as "red" | "teal" | "gold"} />
-                <h3>{title as string}</h3>
-                <p>{text as string}</p>
+          <SectionHeading eyebrow="Lo que puedes encontrar" lead="Elige el tipo de impulso que necesitas hoy y construye tu próxima oportunidad con acompañamiento. ">
+            Recursos para pasar de la intención a la acción
+          </SectionHeading>
+          <div className="pillars-grid">
+            {pillars.map(([Icon, title, description, tone]) => (
+              <article className={`pillar-card pillar-card-${tone}`} key={title}>
+                <IconBadge icon={Icon} tone={tone} />
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <span className="pillar-arrow" aria-hidden="true"><ArrowRight /></span>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section experience-section">
+      <section className="stats-section">
         <div className="site-container">
-          <SectionHeading eyebrow="Una experiencia transformadora">REDLEAD es más que un programa, es una experiencia que te impulsa a</SectionHeading>
-          <div className="orbit-layout">
-            <article className="orbit-point orbit-red"><IconBadge icon={Lightbulb} tone="red" /><h3>Crecer como líder</h3></article>
-            <div className="orbit-center"><Target aria-hidden="true" /><span>Tu potencial<br />en acción</span></div>
-            <article className="orbit-point orbit-gold"><IconBadge icon={Rocket} tone="gold" /><h3>Ampliar tus oportunidades</h3></article>
-            <article className="orbit-point orbit-teal"><IconBadge icon={HeartHandshake} tone="teal" /><h3>Generar impacto en tu comunidad</h3></article>
+          <div className="stats-intro">
+            <span className="eyebrow eyebrow-light">Una red que crece contigo</span>
+            <h2>Cuando una persona avanza, toda la comunidad se mueve.</h2>
+          </div>
+          <div className="stats-grid">
+            {stats.map(([value, label]) => (
+              <div className="stat-item" key={label}>
+                <strong>{value}</strong>
+                <span>{label}</span>
+              </div>
+            ))}
+          </div>
+          <p className="stats-note">* Datos de referencia para esta etapa de lanzamiento.</p>
+        </div>
+      </section>
+
+      <section className="section team-section" id="nuestro-equipo">
+        <div className="site-container">
+          <SectionHeading eyebrow="Cohorte I-2026" lead="Personas jóvenes de distintos países que hacen posible que REDLEAD conecte, acompañe y crezca.">
+            Nuestro equipo
+          </SectionHeading>
+          <Tabs defaultValue="area-0" className="team-tabs">
+            <TabsList className="team-tabs-list" aria-label="Áreas de trabajo de la Cohorte I-2026">
+              {teamAreas.map((area, index) => (
+                <TabsTrigger key={area.name} value={`area-${index}`} className="team-tab-trigger">
+                  {area.name}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            {teamAreas.map((area, index) => (
+              <TabsContent key={area.name} value={`area-${index}`} className="team-tab-content">
+                <div className="team-area-heading">
+                  <div>
+                    <span className="eyebrow">Área de trabajo</span>
+                    <h3>{area.name}</h3>
+                  </div>
+                  <span>{area.members.length} integrantes</span>
+                </div>
+                <div className="team-members-grid">
+                  {area.members.map((member, memberIndex) => (
+                    <TeamMemberCard key={`${member.name}-${memberIndex}`} member={member} area={area.name} />
+                  ))}
+                </div>
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
+      </section>
+
+      <section className="section testimonials-section">
+        <div className="site-container">
+          <SectionHeading eyebrow="Historias que inspiran" lead="Cada proceso es distinto. Lo importante es no recorrerlo a solas.">
+            Voces de nuestra comunidad
+          </SectionHeading>
+          <div className="testimonials-grid">
+            {testimonials.map(([quote, name, role]) => (
+              <figure className="testimonial-card" key={name}>
+                <div className="testimonial-mark" aria-hidden="true">“</div>
+                <blockquote>{quote}</blockquote>
+                <figcaption><strong>{name}</strong><span>{role}</span></figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="final-cta">
+      <section className="section next-step-section">
+        <div className="site-container next-step-panel">
+          <div>
+            <span className="eyebrow">Empieza por donde estás</span>
+            <h2>Hay una oportunidad esperando a que te prepares para encontrarla.</h2>
+            <p>Cuéntanos qué estás buscando y mantente cerca de las próximas convocatorias, mentorías y programas de REDLEAD.</p>
+          </div>
+          <div className="next-step-action">
+            <div className="next-step-icon"><CheckCircle2 aria-hidden="true" /></div>
+            <div>
+              <strong>Formulario de interés</strong>
+              <span>Déjanos tus datos y conecta con la comunidad.</span>
+            </div>
+            <Button asChild variant="hero" size="lg">
+              <Link to="/contacto" hash="inscripcion">Quiero participar <ArrowRight aria-hidden="true" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="final-cta home-final-cta">
         <div className="site-container final-cta-inner">
           <div>
-            <span className="eyebrow eyebrow-light">Da el siguiente paso</span>
-            <h2>No esperes a que las oportunidades lleguen, prepárate para conquistarlas</h2>
+            <span className="eyebrow eyebrow-light">Tu próximo paso empieza aquí</span>
+            <h2>Haz que tus ganas de crecer encuentren dirección.</h2>
           </div>
-          <div className="cta-actions">
-            <Button asChild variant="warm" size="lg"><Link to="/contacto" hash="inscripcion">Únete a REDLEAD <Check /></Link></Button>
-            <SocialLinks />
-          </div>
+          <Button asChild variant="warm" size="lg">
+            <Link to="/contacto" hash="inscripcion">Únete a REDLEAD <Rocket aria-hidden="true" /></Link>
+          </Button>
         </div>
       </section>
     </>

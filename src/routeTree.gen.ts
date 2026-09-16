@@ -14,6 +14,9 @@ import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as HistoriasRouteImport } from './routes/historias'
 import { Route as OportunidadesRouteImport } from './routes/oportunidades'
 import { Route as SobreNosotrosRouteImport } from './routes/sobre-nosotros'
+import { Route as NosotrosImpactoRouteImport } from './routes/nosotros.impacto'
+import { Route as NosotrosMisionVisionRouteImport } from './routes/nosotros.mision-vision'
+import { Route as NosotrosProyectosRouteImport } from './routes/nosotros.proyectos'
 import { Route as ProgramasIndexRouteImport } from './routes/programas.index'
 import { Route as ProgramasSlugRouteImport } from './routes/programas.$slug'
 
@@ -42,6 +45,21 @@ const SobreNosotrosRoute = SobreNosotrosRouteImport.update({
   path: '/sobre-nosotros',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NosotrosImpactoRoute = NosotrosImpactoRouteImport.update({
+  id: '/nosotros/impacto',
+  path: '/nosotros/impacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NosotrosMisionVisionRoute = NosotrosMisionVisionRouteImport.update({
+  id: '/nosotros/mision-vision',
+  path: '/nosotros/mision-vision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NosotrosProyectosRoute = NosotrosProyectosRouteImport.update({
+  id: '/nosotros/proyectos',
+  path: '/nosotros/proyectos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgramasIndexRoute = ProgramasIndexRouteImport.update({
   id: '/programas/',
   path: '/programas/',
@@ -59,6 +77,9 @@ export interface FileRoutesByFullPath {
   '/historias': typeof HistoriasRoute
   '/oportunidades': typeof OportunidadesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/nosotros/impacto': typeof NosotrosImpactoRoute
+  '/nosotros/mision-vision': typeof NosotrosMisionVisionRoute
+  '/nosotros/proyectos': typeof NosotrosProyectosRoute
   '/programas/$slug': typeof ProgramasSlugRoute
   '/programas/': typeof ProgramasIndexRoute
 }
@@ -68,6 +89,9 @@ export interface FileRoutesByTo {
   '/historias': typeof HistoriasRoute
   '/oportunidades': typeof OportunidadesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/nosotros/impacto': typeof NosotrosImpactoRoute
+  '/nosotros/mision-vision': typeof NosotrosMisionVisionRoute
+  '/nosotros/proyectos': typeof NosotrosProyectosRoute
   '/programas/$slug': typeof ProgramasSlugRoute
   '/programas': typeof ProgramasIndexRoute
 }
@@ -78,6 +102,9 @@ export interface FileRoutesById {
   '/historias': typeof HistoriasRoute
   '/oportunidades': typeof OportunidadesRoute
   '/sobre-nosotros': typeof SobreNosotrosRoute
+  '/nosotros/impacto': typeof NosotrosImpactoRoute
+  '/nosotros/mision-vision': typeof NosotrosMisionVisionRoute
+  '/nosotros/proyectos': typeof NosotrosProyectosRoute
   '/programas/$slug': typeof ProgramasSlugRoute
   '/programas/': typeof ProgramasIndexRoute
 }
@@ -89,6 +116,9 @@ export interface FileRouteTypes {
     | '/historias'
     | '/oportunidades'
     | '/sobre-nosotros'
+    | '/nosotros/impacto'
+    | '/nosotros/mision-vision'
+    | '/nosotros/proyectos'
     | '/programas/$slug'
     | '/programas/'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +128,9 @@ export interface FileRouteTypes {
     | '/historias'
     | '/oportunidades'
     | '/sobre-nosotros'
+    | '/nosotros/impacto'
+    | '/nosotros/mision-vision'
+    | '/nosotros/proyectos'
     | '/programas/$slug'
     | '/programas'
   id:
@@ -107,6 +140,9 @@ export interface FileRouteTypes {
     | '/historias'
     | '/oportunidades'
     | '/sobre-nosotros'
+    | '/nosotros/impacto'
+    | '/nosotros/mision-vision'
+    | '/nosotros/proyectos'
     | '/programas/$slug'
     | '/programas/'
   fileRoutesById: FileRoutesById
@@ -117,6 +153,9 @@ export interface RootRouteChildren {
   HistoriasRoute: typeof HistoriasRoute
   OportunidadesRoute: typeof OportunidadesRoute
   SobreNosotrosRoute: typeof SobreNosotrosRoute
+  NosotrosImpactoRoute: typeof NosotrosImpactoRoute
+  NosotrosMisionVisionRoute: typeof NosotrosMisionVisionRoute
+  NosotrosProyectosRoute: typeof NosotrosProyectosRoute
   ProgramasSlugRoute: typeof ProgramasSlugRoute
   ProgramasIndexRoute: typeof ProgramasIndexRoute
 }
@@ -158,6 +197,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreNosotrosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nosotros/impacto': {
+      id: '/nosotros/impacto'
+      path: '/nosotros/impacto'
+      fullPath: '/nosotros/impacto'
+      preLoaderRoute: typeof NosotrosImpactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nosotros/mision-vision': {
+      id: '/nosotros/mision-vision'
+      path: '/nosotros/mision-vision'
+      fullPath: '/nosotros/mision-vision'
+      preLoaderRoute: typeof NosotrosMisionVisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nosotros/proyectos': {
+      id: '/nosotros/proyectos'
+      path: '/nosotros/proyectos'
+      fullPath: '/nosotros/proyectos'
+      preLoaderRoute: typeof NosotrosProyectosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programas/': {
       id: '/programas/'
       path: '/programas'
@@ -181,6 +241,9 @@ const rootRouteChildren: RootRouteChildren = {
   HistoriasRoute: HistoriasRoute,
   OportunidadesRoute: OportunidadesRoute,
   SobreNosotrosRoute: SobreNosotrosRoute,
+  NosotrosImpactoRoute: NosotrosImpactoRoute,
+  NosotrosMisionVisionRoute: NosotrosMisionVisionRoute,
+  NosotrosProyectosRoute: NosotrosProyectosRoute,
   ProgramasSlugRoute: ProgramasSlugRoute,
   ProgramasIndexRoute: ProgramasIndexRoute,
 }
