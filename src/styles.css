@@ -379,3 +379,13 @@ main { padding-top: 82px; }
   .team-area-heading { align-items: flex-start; flex-direction: column; gap: 10px; }.team-area-heading > span { white-space: normal; }.team-members-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }.team-member-card { min-height: 350px; }.team-member-card:hover { transform: none; }
   .mission-vision-card { padding: 27px; }.mission-values-grid, .impact-stats-grid, .projects-grid { grid-template-columns: 1fr; }.impact-stat-card { min-height: 190px; }.cohort-grid h2 { font-size: 2rem; }.work-area-list span { font-size: .75rem; }.projects-intro > p { margin-top: -15px; }.project-image-placeholder { min-height: 165px; }
 }
+@media (max-width: 900px) {
+  .detail-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 640px) {
+  .opportunity-card { grid-template-columns: 1fr; align-items: start; gap: 22px; padding: 24px 20px; }
+  .opportunity-link { width: 100%; justify-content: center; box-sizing: border-box; }
+  .story-card { padding: 26px 22px; }
+  .detail-title { font-size: 1.25rem; }
+}
