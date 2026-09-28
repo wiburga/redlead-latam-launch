@@ -79,7 +79,7 @@ function Header() {
             <DropdownMenuContent align="center" className="nav-dropdown-content">
               {aboutLinks.map((item) => (
                 <DropdownMenuItem key={item.label} asChild>
-                  <Link to={item.to} hash={"hash" in item ? item.hash : undefined}>{item.label}</Link>
+                  <Link to={item.to} {...("hash" in item ? { hash: item.hash } : {})}>{item.label}</Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
