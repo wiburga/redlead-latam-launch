@@ -138,6 +138,13 @@ function Footer() {
             <p>Líderes que potencian Líderes</p>
           </div>
         </div>
+        <nav className="footer-nav" aria-label="Navegación del pie de página">
+          <Link to="/programas">Programas</Link>
+          <Link to="/historias">Historias</Link>
+          <Link to="/oportunidades">Oportunidades</Link>
+          <Link to="/sobre-nosotros">Sobre Nosotros</Link>
+          <Link to="/contacto">Contáctanos</Link>
+        </nav>
         <SocialLinks />
         <p className="copyright">© 2026 REDLEAD</p>
       </div>
