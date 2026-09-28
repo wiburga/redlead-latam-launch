@@ -103,7 +103,8 @@ function Header() {
       </div>
       {open && (
         <nav className="mobile-nav" aria-label="Navegación móvil">
-          <Link to="/oportunidades" onClick={close}>Oportunidades</Link>
+          <Link to="/" onClick={close}>Inicio</Link>
+          <Link to="/programas" onClick={close}>Programas</Link>
           <Collapsible open={mobileAboutOpen} onOpenChange={setMobileAboutOpen} className="mobile-about">
             <CollapsibleTrigger className="mobile-about-trigger">
               <span>Nosotros</span><ChevronDown aria-hidden="true" />
@@ -114,8 +115,8 @@ function Header() {
               ))}
             </CollapsibleContent>
           </Collapsible>
-          <Link to="/programas" onClick={close}>Recursos</Link>
-          <Link to="/oportunidades" onClick={close}>Convocatorias REDLEAD</Link>
+          <Link to="/historias" onClick={close}>Historias</Link>
+          <Link to="/oportunidades" onClick={close}>Oportunidades</Link>
           <Link to="/contacto" onClick={close}>Contáctanos</Link>
           <Button asChild variant="hero" className="w-full">
             <Link to="/contacto" hash="inscripcion" onClick={close}>Únete a REDLEAD</Link>
