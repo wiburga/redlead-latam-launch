@@ -357,7 +357,7 @@ main { padding-top: 82px; }
   .split-layout, .page-hero-grid, .mission-grid, .contact-grid { grid-template-columns: 1fr; }.contact-intro { position: static; }.page-hero-grid { gap: 40px; }.about-image { order: -1; height: 380px; }
   .best-grid, .values-grid { grid-template-columns: 1fr; }.story-grid { grid-template-columns: 1fr; gap: 40px; }.year-mark { max-width: 250px; }
   .orbit-layout { grid-template-columns: 1fr 180px 1fr; gap: 20px; }.orbit-layout::before { width: 380px; }.orbit-center { width: 165px; height: 165px; }
-  .final-cta-inner { grid-template-columns: 1fr; align-items: start; gap: 35px; }.footer-inner { grid-template-columns: 1fr auto; }.copyright { grid-column: 1 / 3; justify-self: center; }
+  .final-cta-inner { grid-template-columns: 1fr; align-items: start; gap: 35px; }.footer-inner { justify-content: center; text-align: center; }
   .about-redlead-grid, .next-step-panel { grid-template-columns: 1fr; gap: 45px; }.about-redlead-image { min-height: 420px; max-width: 680px; }
   .pillars-grid { grid-template-columns: repeat(2, 1fr); }.stats-intro { display: block; }.stats-intro h2 { max-width: 650px; }.testimonials-grid { grid-template-columns: 1fr; }.testimonial-card { min-height: 210px; }
   .team-members-grid { grid-template-columns: repeat(3, 1fr); }
@@ -373,7 +373,7 @@ main { padding-top: 82px; }
   .tools-grid { grid-template-columns: 1fr; }.tool-item { display: flex; align-items: center; gap: 17px; padding: 18px 0; border-right: 0; }.tool-item h3 { margin: 0; }
   .split-layout { gap: 48px; }.community-image { min-height: 380px; }.achievement-row { grid-template-columns: 34px 1fr; }.achievement-row > svg { display: none; }
   .best-card { min-height: auto; }.orbit-layout { min-height: auto; display: flex; flex-direction: column; }.orbit-layout::before { display: none; }.orbit-center { order: -1; width: 150px; height: 150px; }.orbit-point { width: 100%; box-sizing: border-box; }
-  .final-cta { padding-block: 60px; }.footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; }.copyright { grid-column: auto; justify-self: center; }.footer-brand { flex-direction: column; }
+  .final-cta { padding-block: 60px; }.footer-inner { flex-direction: column; text-align: center; }.footer-brand { flex-direction: column; }
   .page-hero { padding-block: 60px; }.page-hero-grid { min-height: auto; }.page-hero h1, .contact-intro h1 { font-size: 3rem; }.about-image { height: 310px; }.skill-cloud { grid-template-columns: 1fr; }.objective-inner { grid-template-columns: 1fr; }.objective-inner > svg { width: 70px; height: 70px; }
   .contact-page { padding-block: 65px; }.contact-grid { gap: 55px; }.form-panel { padding: 26px 20px; }.contact-socials .grid { grid-template-columns: 1fr; }
   .about-redlead-copy > p { margin-top: -12px; }.about-redlead-image { min-height: 310px; }.about-redlead-image::after { inset: 10px -10px -10px 10px; }
