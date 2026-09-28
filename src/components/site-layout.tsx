@@ -109,7 +109,7 @@ function Header() {
             </CollapsibleTrigger>
             <CollapsibleContent className="mobile-about-content">
               {aboutLinks.map((item) => (
-                <Link key={item.label} to={item.to} hash={"hash" in item ? item.hash : undefined} onClick={close}>{item.label}</Link>
+                <Link key={item.label} to={item.to} {...("hash" in item ? { hash: item.hash } : {})} onClick={close}>{item.label}</Link>
               ))}
             </CollapsibleContent>
           </Collapsible>
