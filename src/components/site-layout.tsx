@@ -1,14 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import {
-  ChevronDown,
-  Facebook,
-  Instagram,
-  Menu,
-  Music2,
-  X,
-  Youtube,
-} from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,22 +15,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import logoAsset from "@/assets/LogoREDLEAD.png";
-
-const socialLinks = [
-  { label: "Instagram @redlead.latam", handle: "@redlead.latam", icon: Instagram },
-  { label: "Facebook Redlead", handle: "Redlead", icon: Facebook },
-  { label: "TikTok @redlead.latam", handle: "@redlead.latam", icon: Music2 },
-  { label: "YouTube @redlead_latam", handle: "@redlead_latam", icon: Youtube },
-];
+import { socialLinks } from "@/lib/site-config";
 
 export function SocialLinks({ showHandles = false }: { showHandles?: boolean }) {
   return (
     <div className={showHandles ? "grid gap-3 sm:grid-cols-2" : "flex items-center gap-2"}>
-      {socialLinks.map(({ label, handle, icon: Icon }, index) => (
+      {socialLinks.map(({ name, handle, url, icon: Icon }, index) => (
         <a
-          key={label}
-          href="#"
-          aria-label={label}
+          key={name}
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${name} ${handle}`}
           className={showHandles ? "social-row" : `social-icon social-icon-${index + 1}`}
         >
           <span className={`social-icon social-icon-${index + 1}`}>
@@ -46,7 +34,7 @@ export function SocialLinks({ showHandles = false }: { showHandles?: boolean }) 
           </span>
           {showHandles && (
             <span>
-              <strong>{label.split(" ")[0]}</strong>
+              <strong>{name}</strong>
               <small>{handle}</small>
             </span>
           )}
@@ -91,7 +79,7 @@ function Header() {
             <DropdownMenuContent align="center" className="nav-dropdown-content">
               {aboutLinks.map((item) => (
                 <DropdownMenuItem key={item.label} asChild>
-                  <Link to={item.to} hash={"hash" in item ? item.hash : undefined}>{item.label}</Link>
+                  <Link to={item.to} {...("hash" in item ? { hash: item.hash } : {})}>{item.label}</Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -121,7 +109,7 @@ function Header() {
             </CollapsibleTrigger>
             <CollapsibleContent className="mobile-about-content">
               {aboutLinks.map((item) => (
-                <Link key={item.label} to={item.to} hash={"hash" in item ? item.hash : undefined} onClick={close}>{item.label}</Link>
+                <Link key={item.label} to={item.to} {...("hash" in item ? { hash: item.hash } : {})} onClick={close}>{item.label}</Link>
               ))}
             </CollapsibleContent>
           </Collapsible>
