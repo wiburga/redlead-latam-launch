@@ -1,14 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
-import {
-  ChevronDown,
-  Facebook,
-  Instagram,
-  Menu,
-  Music2,
-  X,
-  Youtube,
-} from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -23,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import logoAsset from "@/assets/LogoREDLEAD.png";
+import { socialLinks } from "@/lib/site-config";
 
 export function SocialLinks({ showHandles = false }: { showHandles?: boolean }) {
   return (
