@@ -69,7 +69,8 @@ function Header() {
           />
         </Link>
         <nav className="desktop-nav" aria-label="Navegación principal">
-          <Link to="/oportunidades" activeProps={{ className: "active" }}>Oportunidades</Link>
+          <Link to="/" activeProps={{ className: "active" }}>Inicio</Link>
+          <Link to="/programas" activeProps={{ className: "active" }}>Programas</Link>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button type="button" className="nav-dropdown-trigger" aria-label="Abrir menú Nosotros">
@@ -84,8 +85,8 @@ function Header() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link to="/programas">Recursos</Link>
-          <Link to="/oportunidades">Convocatorias REDLEAD</Link>
+          <Link to="/historias" activeProps={{ className: "active" }}>Historias</Link>
+          <Link to="/oportunidades" activeProps={{ className: "active" }}>Oportunidades</Link>
           <Link to="/contacto" activeProps={{ className: "active" }}>Contáctanos</Link>
         </nav>
         <Button
@@ -102,7 +103,8 @@ function Header() {
       </div>
       {open && (
         <nav className="mobile-nav" aria-label="Navegación móvil">
-          <Link to="/oportunidades" onClick={close}>Oportunidades</Link>
+          <Link to="/" onClick={close}>Inicio</Link>
+          <Link to="/programas" onClick={close}>Programas</Link>
           <Collapsible open={mobileAboutOpen} onOpenChange={setMobileAboutOpen} className="mobile-about">
             <CollapsibleTrigger className="mobile-about-trigger">
               <span>Nosotros</span><ChevronDown aria-hidden="true" />
@@ -113,8 +115,8 @@ function Header() {
               ))}
             </CollapsibleContent>
           </Collapsible>
-          <Link to="/programas" onClick={close}>Recursos</Link>
-          <Link to="/oportunidades" onClick={close}>Convocatorias REDLEAD</Link>
+          <Link to="/historias" onClick={close}>Historias</Link>
+          <Link to="/oportunidades" onClick={close}>Oportunidades</Link>
           <Link to="/contacto" onClick={close}>Contáctanos</Link>
           <Button asChild variant="hero" className="w-full">
             <Link to="/contacto" hash="inscripcion" onClick={close}>Únete a REDLEAD</Link>
@@ -136,6 +138,13 @@ function Footer() {
             <p>Líderes que potencian Líderes</p>
           </div>
         </div>
+        <nav className="footer-nav" aria-label="Navegación del pie de página">
+          <Link to="/programas">Programas</Link>
+          <Link to="/historias">Historias</Link>
+          <Link to="/oportunidades">Oportunidades</Link>
+          <Link to="/sobre-nosotros">Sobre Nosotros</Link>
+          <Link to="/contacto">Contáctanos</Link>
+        </nav>
         <SocialLinks />
         <p className="copyright">© 2026 REDLEAD</p>
       </div>
