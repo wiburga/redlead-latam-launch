@@ -69,7 +69,8 @@ function Header() {
           />
         </Link>
         <nav className="desktop-nav" aria-label="Navegación principal">
-          <Link to="/oportunidades" activeProps={{ className: "active" }}>Oportunidades</Link>
+          <Link to="/" activeProps={{ className: "active" }}>Inicio</Link>
+          <Link to="/programas" activeProps={{ className: "active" }}>Programas</Link>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button type="button" className="nav-dropdown-trigger" aria-label="Abrir menú Nosotros">
@@ -84,8 +85,8 @@ function Header() {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link to="/programas">Recursos</Link>
-          <Link to="/oportunidades">Convocatorias REDLEAD</Link>
+          <Link to="/historias" activeProps={{ className: "active" }}>Historias</Link>
+          <Link to="/oportunidades" activeProps={{ className: "active" }}>Oportunidades</Link>
           <Link to="/contacto" activeProps={{ className: "active" }}>Contáctanos</Link>
         </nav>
         <Button
