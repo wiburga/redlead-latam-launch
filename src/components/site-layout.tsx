@@ -24,21 +24,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import logoAsset from "@/assets/LogoREDLEAD.png";
 
-const socialLinks = [
-  { label: "Instagram @redlead.latam", handle: "@redlead.latam", icon: Instagram },
-  { label: "Facebook Redlead", handle: "Redlead", icon: Facebook },
-  { label: "TikTok @redlead.latam", handle: "@redlead.latam", icon: Music2 },
-  { label: "YouTube @redlead_latam", handle: "@redlead_latam", icon: Youtube },
-];
-
 export function SocialLinks({ showHandles = false }: { showHandles?: boolean }) {
   return (
     <div className={showHandles ? "grid gap-3 sm:grid-cols-2" : "flex items-center gap-2"}>
-      {socialLinks.map(({ label, handle, icon: Icon }, index) => (
+      {socialLinks.map(({ name, handle, url, icon: Icon }, index) => (
         <a
-          key={label}
-          href="#"
-          aria-label={label}
+          key={name}
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${name} ${handle}`}
           className={showHandles ? "social-row" : `social-icon social-icon-${index + 1}`}
         >
           <span className={`social-icon social-icon-${index + 1}`}>
@@ -46,7 +41,7 @@ export function SocialLinks({ showHandles = false }: { showHandles?: boolean }) 
           </span>
           {showHandles && (
             <span>
-              <strong>{label.split(" ")[0]}</strong>
+              <strong>{name}</strong>
               <small>{handle}</small>
             </span>
           )}
