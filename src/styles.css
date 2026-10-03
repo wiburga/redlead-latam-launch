@@ -304,7 +304,7 @@ main { padding-top: 82px; }
 .card-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; color: var(--primary); font-weight: 800; font-size: .88rem; }
 .card-link svg { width: 17px; height: 17px; transition: transform .2s ease; }
 .program-card:hover .card-link svg { transform: translateX(4px); }
-.back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px; color: var(--secondary); font-weight: 750; font-size: .88rem; text-decoration: none; }
+.back-link { display: flex; width: fit-content; align-items: center; gap: 8px; margin-bottom: 18px; color: var(--secondary); font-weight: 750; font-size: .88rem; text-decoration: none; }
 .back-link svg { width: 17px; height: 17px; }
 .back-link:hover { color: var(--primary); }
 .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; }
