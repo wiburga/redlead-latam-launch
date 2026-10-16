@@ -16,7 +16,8 @@ import { TeamMemberCard } from "@/components/team-member-card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import communityImage from "@/assets/redlead-community.jpg";
-import heroLoopAsset from "@/assets/videos/redlead-hero-loop.mp4.asset.json";
+import heroLoopMp4 from "@/assets/videos/redlead-hero-loop.mp4.asset.json";
+import heroLoopWebm from "@/assets/videos/redlead-hero-loop.webm.asset.json";
 import { teamAreas } from "@/lib/team";
 
 export const Route = createFileRoute("/")({
