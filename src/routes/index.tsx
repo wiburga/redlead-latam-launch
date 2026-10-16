@@ -16,6 +16,7 @@ import { TeamMemberCard } from "@/components/team-member-card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import communityImage from "@/assets/redlead-community.jpg";
+import heroLoopAsset from "@/assets/videos/redlead-hero-loop.mp4.asset.json";
 import { teamAreas } from "@/lib/team";
 
 export const Route = createFileRoute("/")({
@@ -73,12 +74,16 @@ function Index() {
               <span>Una comunidad para avanzar, estés donde estés.</span>
             </div>
           </div>
-          <div className="hero-placeholder" role="img" aria-label="Espacio reservado para una imagen de jóvenes latinoamericanos">
-            <div className="hero-placeholder-inner">
-              <Users aria-hidden="true" />
-              <span>Imagen de nuestra comunidad</span>
-              <small>Próximamente</small>
-            </div>
+          <div className="hero-placeholder hero-placeholder-media">
+            <video
+              src={heroLoopAsset.url}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="hero-loop-video"
+              aria-label="Animación de avance del proyecto REDLEAD"
+            />
           </div>
         </div>
       </section>
