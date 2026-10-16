@@ -77,14 +77,16 @@ function Index() {
           </div>
           <div className="hero-placeholder hero-placeholder-media">
             <video
-              src={heroLoopAsset.url}
               autoPlay
               loop
               muted
               playsInline
               className="hero-loop-video"
               aria-label="Animación de avance del proyecto REDLEAD"
-            />
+            >
+              <source src={heroLoopWebm.url} type="video/webm" />
+              <source src={heroLoopMp4.url} type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
