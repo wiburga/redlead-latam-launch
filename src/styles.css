@@ -369,7 +369,7 @@ main { padding-top: 82px; }
 @media (max-width: 640px) {
   .site-container { width: min(100% - 28px, 1180px); }
   .site-header { height: 72px; }.brand-link { height: 100%; }.brand-link img { width: auto; height: 40px; } main { padding-top: 72px; }.mobile-nav { top: 72px; }
-  .home-hero { min-height: auto; align-items: start; }.hero-content { padding-block: 75px 60px; }.hero-content h1 { font-size: 3.1rem; }.hero-content p { font-size: 1.05rem; }.hero-shape-one { width: 90vw; height: 80vw; right: -34%; top: -7%; }.hero-shape-two { width: 65vw; height: 60vw; right: -21%; bottom: 27%; }.hero-placeholder { transform: none; }
+  .home-hero { min-height: auto; align-items: start; }.hero-content { padding-block: 75px 60px; }.hero-content h1 { font-size: clamp(2.1rem, 10.5vw, 3.1rem); }.hero-content p { font-size: 1.05rem; }.hero-shape-one { width: 90vw; height: 80vw; right: -34%; top: -7%; }.hero-shape-two { width: 65vw; height: 60vw; right: -21%; bottom: 27%; }.hero-placeholder { transform: none; }
   .hero-actions { align-items: stretch; flex-direction: column; max-width: 300px; }.hero-actions .button { width: 100%; }.hero-trust { align-items: flex-start; font-size: .84rem; }.hero-trust svg { flex: 0 0 20px; }
   .section { padding-block: 70px; }.section-heading { margin-bottom: 34px; }.section-heading h2, .final-cta h2, .objective-inner h2 { font-size: 2rem; }
   .tools-grid { grid-template-columns: 1fr; }.tool-item { display: flex; align-items: center; gap: 17px; padding: 18px 0; border-right: 0; }.tool-item h3 { margin: 0; }
