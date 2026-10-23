@@ -6,6 +6,7 @@ import { JoinCTA } from "@/components/join-cta";
 import { formatDeadline, oportunidades } from "@/lib/oportunidades";
 
 export const Route = createFileRoute("/oportunidades")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Convocatorias y oportunidades | REDLEAD" },

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const Route = createFileRoute("/nosotros/proyectos")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Proyectos | REDLEAD" },

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import communityImage from "@/assets/redlead-community.jpg";
 
 export const Route = createFileRoute("/sobre-nosotros")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Sobre Nosotros | REDLEAD" },

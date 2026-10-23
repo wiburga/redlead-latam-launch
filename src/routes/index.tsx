@@ -19,6 +19,7 @@ import communityImage from "@/assets/redlead-community.jpg";
 import { teamAreas } from "@/lib/team";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "REDLEAD | Liderazgo y empleabilidad juvenil" },
