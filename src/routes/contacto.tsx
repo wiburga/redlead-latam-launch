@@ -5,6 +5,7 @@ import { SocialLinks } from "@/components/site-layout";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/contacto")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Contacto e inscripción | REDLEAD" },

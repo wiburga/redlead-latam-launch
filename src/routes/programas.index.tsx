@@ -6,6 +6,7 @@ import { JoinCTA } from "@/components/join-cta";
 import { programas } from "@/lib/programas";
 
 export const Route = createFileRoute("/programas/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Programas de formación | REDLEAD" },

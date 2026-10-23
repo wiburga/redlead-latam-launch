@@ -6,6 +6,7 @@ import { JoinCTA } from "@/components/join-cta";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/nosotros/impacto")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Nuestro Impacto | REDLEAD" },

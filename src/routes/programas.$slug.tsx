@@ -6,6 +6,7 @@ import { JoinCTA } from "@/components/join-cta";
 import { getPrograma } from "@/lib/programas";
 
 export const Route = createFileRoute("/programas/$slug")({
+  staticData: { sitemap: true },
   loader: ({ params }) => {
     const programa = getPrograma(params.slug);
     if (!programa) throw notFound();

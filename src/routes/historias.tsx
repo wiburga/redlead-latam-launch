@@ -6,6 +6,7 @@ import { JoinCTA } from "@/components/join-cta";
 import { historias } from "@/lib/historias";
 
 export const Route = createFileRoute("/historias")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Historias de la comunidad | REDLEAD" },
