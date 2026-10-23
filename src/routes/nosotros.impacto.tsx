@@ -13,6 +13,7 @@ export const Route = createFileRoute("/nosotros/impacto")({
       { property: "og:title", content: "Nuestro Impacto | REDLEAD" },
       { property: "og:description", content: "Una red joven, regional y colaborativa que trabaja para acercar oportunidades." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ImpactPage,
