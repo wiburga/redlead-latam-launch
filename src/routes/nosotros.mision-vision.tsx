@@ -13,6 +13,7 @@ export const Route = createFileRoute("/nosotros/mision-vision")({
       { property: "og:title", content: "Misión y Visión | REDLEAD" },
       { property: "og:description", content: "La misión, visión y valores de REDLEAD para ampliar oportunidades en Latinoamérica." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: MissionVisionPage,

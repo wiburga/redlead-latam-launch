@@ -13,7 +13,15 @@ export const Route = createFileRoute("/programas/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Programa no disponible | REDLEAD" }, { name: "robots", content: "noindex" }] };
+      return { meta: [
+        { title: "Programa no disponible | REDLEAD" },
+        { name: "robots", content: "noindex" },
+        { name: "description", content: "Este programa de REDLEAD no está disponible." },
+        { property: "og:title", content: "Programa no disponible | REDLEAD" },
+        { property: "og:description", content: "Este programa de REDLEAD no está disponible." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+      ] };
     }
     return {
       meta: [

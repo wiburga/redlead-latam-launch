@@ -15,6 +15,7 @@ export const Route = createFileRoute("/nosotros/proyectos")({
       { property: "og:title", content: "Proyectos | REDLEAD" },
       { property: "og:description", content: "Iniciativas de REDLEAD para conectar, acompañar y desarrollar talento joven." },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: ProjectsPage,
