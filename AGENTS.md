@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the replaceable home cover photo at `public/hero-jovenes.webp`; the explicit public path lets the owner replace it without editing the page.
