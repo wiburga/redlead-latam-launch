@@ -87,6 +87,7 @@ function Header() {
           </DropdownMenu>
           <Link to="/historias" activeProps={{ className: "active" }}>Historias</Link>
           <Link to="/oportunidades" activeProps={{ className: "active" }}>Oportunidades</Link>
+          <Link to="/blog" search={{ category: "" }} activeProps={{ className: "active" }}>Blog</Link>
           <Link to="/contacto" activeProps={{ className: "active" }}>Contáctanos</Link>
         </nav>
         <Button
@@ -117,6 +118,7 @@ function Header() {
           </Collapsible>
           <Link to="/historias" onClick={close}>Historias</Link>
           <Link to="/oportunidades" onClick={close}>Oportunidades</Link>
+          <Link to="/blog" search={{ category: "" }} onClick={close}>Blog</Link>
           <Link to="/contacto" onClick={close}>Contáctanos</Link>
           <Button asChild variant="hero" className="w-full">
             <Link to="/contacto" hash="inscripcion" onClick={close}>Únete a REDLEAD</Link>
@@ -142,6 +144,7 @@ function Footer() {
           <Link to="/programas">Programas</Link>
           <Link to="/historias">Historias</Link>
           <Link to="/oportunidades">Oportunidades</Link>
+          <Link to="/blog" search={{ category: "" }}>Blog</Link>
           <Link to="/sobre-nosotros">Sobre Nosotros</Link>
           <Link to="/contacto">Contáctanos</Link>
         </nav>
